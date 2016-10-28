@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Octovetica";
+    src: url('Octovetica.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: aqua;
+}
+
+#navbar {
+    margin: auto;
+    background-color: red;
+    width: 80%;
+    margin-top: 20px;
+    height: 50px;
+}
+
+#navbar .element{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-family: Octovetica, sans-serif;
+    position: relative;
+    padding-top: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#navbar .element:hover{
+    background-color: crimson;
+    position: relative;
+    cursor: pointer;
+}
