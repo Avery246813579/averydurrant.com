@@ -4,32 +4,116 @@
     <meta charset="UTF-8">
     <title>Avery Durrant</title>
     <link rel="stylesheet" type="text/css" href="assets/style/general.css">
-
-    <script src="assets/scripts/helper.js"></script>
-    <script src="assets/scripts/navHelper.js"></script>
 </head>
 <body>
 
-<div id="navbar">
-    <div class="element">
-        TEST TEST
-    </div>
-    p
-</div>
-
-<div style="padding-left: 10%; padding-right: 10%">
-    <div style="width: 100%; height: 500px; background-color: blueviolet">
-
+<div id="languages">
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
     </div>
 
-    <div style="background-color: aquamarine; width: 20%; height: 100px;">
-        A
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
+    </div>
+
+    <div class="l-block" style="background-color: chocolate">
+        <div class="expand">Java</div>
     </div>
 </div>
 
-<div class="language">
+<div class="modal">
+    <div class="content">
+        <div class="wrapper">
+            <div class="side">
+                <div id="J1" class="bar">Knowledge</div>
+                <br>
 
+                <div id="J2" style="background-color: crimson">Years Known</div>
+                <br>
+            </div>
+
+            <div class="projects" style="float: left">
+                Test
+            </div>
+        </div>
+    </div>
 </div>
+
+<!--<div id="test3" class="test">-->
+<!--Java:<br>-->
+<!--<span>D</span>-->
+
+<!--<div id="J1" style="background-color: brown">Knowledge</div>-->
+<!--<br>-->
+
+<!--<div id="J2" style="background-color: crimson">Years Learnt</div>-->
+<!--<br>-->
+
+<!--<div id="J3" style="background-color: chocolate">Dogs</div>-->
+<!--</div>-->
+
+<!--<div class="language">-->
+<!--Java:-->
+<!--<div class="block">-->
+<!--<span id="test" class="animate"></span>-->
+<!--<span id="test2" class="animate"></span>-->
+<!--</div>-->
+<!--</div>-->
+
+<script>
+    var languages = document.getElementsByClassName('l-block');
+    var modal = document.getElementsByClassName('modal')[0];
+
+    for (var i = 0; i < languages.length; i++) {
+        (function () {
+            var expand = languages[i].getElementsByClassName('expand')[0];
+
+            languages[i].style.height = "100px";
+
+            languages[i].onmouseover = function () {
+                expand.style.top = "50px";
+            };
+
+            languages[i].onmouseout = function () {
+                expand.style.top = "40px";
+            };
+
+            languages[i].onclick = function () {
+                modal.style.display = "block";
+
+                setTimeout(function () {
+                    document.getElementById('J1').style.width = "50%"
+                }, 100);
+            };
+        })();
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
 
 </body>
 </html>
