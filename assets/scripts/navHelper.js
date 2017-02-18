@@ -1,4 +1,4 @@
-readTextFile('assets/json/experience.JSON', function(err, payload){
+readTextFile('assets/json/languages.JSON', function(err, payload){
     if(err){
         console.log("ERROR");
     }
