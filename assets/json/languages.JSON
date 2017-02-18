@@ -1,6 +1,78 @@
 [
   {
-    "lang": "Java",
+    "name": "Java",
+    "started": 2011,
+    "projects": [
+    ]
+  },
+  {
+    "name": "HTML",
+    "started": 2011,
+    "projects": [
+    ]
+  },
+  {
+    "name": "CSS",
+    "started": 2011,
+    "projects": [
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "started": 2011,
+    "projects": [
+    ]
+  },
+  {
+    "name": "PHP",
+    "started": 2011,
+    "projects": [
+    ]
+  },
+  {
+    "name": "Python",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "Ruby",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "C++",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "C#",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "Node.js",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "jQuery",
+    "started": 2011,
+    "projects": [
+
+    ]
+  },
+  {
+    "name": "SQL",
     "started": 2011,
     "projects": [
 

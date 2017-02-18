@@ -11,34 +11,6 @@
     <div class="l-block" style="background-color: chocolate">
         <div class="expand">Java</div>
     </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
-
-    <div class="l-block" style="background-color: chocolate">
-        <div class="expand">Java</div>
-    </div>
 </div>
 
 <div class="modal">
@@ -82,33 +54,9 @@
 <!--</div>-->
 <!--</div>-->
 
+<script src="assets/scripts/helper.js"></script>
 <script>
-    var languages = document.getElementsByClassName('l-block');
     var modal = document.getElementsByClassName('modal')[0];
-
-    for (var i = 0; i < languages.length; i++) {
-        (function () {
-            var expand = languages[i].getElementsByClassName('expand')[0];
-
-            languages[i].style.height = "100px";
-
-            languages[i].onmouseover = function () {
-                expand.style.top = "50px";
-            };
-
-            languages[i].onmouseout = function () {
-                expand.style.top = "40px";
-            };
-
-            languages[i].onclick = function () {
-                modal.style.display = "block";
-
-                setTimeout(function () {
-                    document.getElementById('J1').style.width = "50%"
-                }, 100);
-            };
-        })();
-    }
 
     window.onclick = function (event) {
         if (event.target == modal) {
@@ -116,6 +64,56 @@
             document.getElementById('J1').style.width = "0%"
         }
     };
+
+    readTextFile('assets/json/languages.JSON', function(err, payload){
+        if(err){
+            console.log("ERROR");
+            return;
+        }
+
+        var content = JSON.parse(payload), toAdd = '<div class="row">';
+        for(var j = 0; j < content.length; j++) {
+            toAdd += '<div class="l-block" style="background-color: chocolate"><div class="expand">' + content[j]['name'] + '</div></div>';
+
+            if (j == 5 || j == 11) {
+                toAdd += '</div>';
+
+                if(j == 5){
+                    toAdd += '<div class="row">'
+                }
+            }
+        }
+
+        document.getElementById('languages').innerHTML = toAdd;
+
+        var languages = document.getElementsByClassName('l-block');
+        for (var i = 0; i < languages.length; i++) {
+            (function () {
+                var expand = languages[i].getElementsByClassName('expand')[0];
+
+                languages[i].style.height = "100px";
+
+                var lang = languages[i];
+                languages[i].onmouseover = function () {
+                    expand.style.top = "50px";
+                    lang.parentElement.style.height = "150px";
+                };
+
+                languages[i].onmouseout = function () {
+                    expand.style.top = "40px";
+                    lang.parentElement.style.height = "125px";
+                };
+
+                languages[i].onclick = function () {
+                    modal.style.display = "block";
+
+                    setTimeout(function () {
+                        document.getElementById('J1').style.width = "50%"
+                    }, 100);
+                };
+            })();
+        }
+    });
 </script>
 
 </body>

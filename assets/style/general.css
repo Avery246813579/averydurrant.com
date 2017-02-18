@@ -51,6 +51,15 @@ body {
     overflow: hidden;
 }
 
+.row{
+    height: 125px;
+
+    -webkit-transition: height 1s ease-in-out;
+    -moz-transition: height 1s ease-in-out;
+    -o-transition: height 1s ease-in-out;
+    transition: height 1s ease-in-out;
+}
+
 #languages{
     width: 800px;
     height: 400px;
