@@ -81,8 +81,7 @@ body {
 }
 
 .row{
-    height: 225px;
-    overflow: hidden;
+    height: 125px;
 
     -webkit-transition: height 1s ease-in-out;
     -moz-transition: height 1s ease-in-out;
@@ -119,12 +118,12 @@ body {
 
 .expand {
     position: relative;
-    top: 40px;
+    top: 40px
 }
 
 .l-block:hover {
-    width: 225px !important;
-    height: 225px !important;
+    width: 125px !important;
+    height: 125px !important;
 
     -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
     -moz-transition: width 1s ease-in-out, height 1s ease-in-out;
