@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Avery Durrant</title>
-    <!--<script>-->
-        <!--if( navigator.userAgent.match(/Android/i) ||-->
-                <!--navigator.userAgent.match(/webOS/i) ||-->
-                <!--navigator.userAgent.match(/iPhone/i) ||-->
-                <!--navigator.userAgent.match(/iPod/i)){-->
-            <!--document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="assets/style/mobile.css">';-->
-        <!--}else{-->
-            <!--document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="assets/style/general.css">';-->
-        <!--}-->
-    <!--</script>-->
     <link rel="stylesheet" type="text/css" href="assets/style/general.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onloadstart="">
 
-<canvas id="myCanvas"></canvas>
+<!--<canvas id="myCanvas"></canvas>-->
 
-<div id="iconfall">
-    <div class="text">
-        Avery Durrant
+<!--<div id="iconfall">-->
+    <!--<div class="text">-->
+        <!--Avery Durrant-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="console">
+    <div class="line">
+        Frostbyte Gat-OS [Version 1.0.0]<br>
+        (C) Avery Durrant<br><br>
+        C:\Users\AveryDurrant> knowledge<br>
+        For more knowledge on Avery's knowledge or his projects on an element. Type the command-name into chat or click on it.<br>
+        <p>HTML&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Description</p>
+        <p>JAVACSRIPT&emsp;&emsp;&emsp;&emsp;&emsp;Description</p>
+        <p>JAVA&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Description</p>
+        <p>C++&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Description</p><br>
+        C:\Users\AveryDurrant>
     </div>
 </div>
 
@@ -79,6 +83,47 @@
 <script src="assets/scripts/helper.js"></script>
 <script src="assets/scripts/iconfall.js"></script>
 <script>
+    var cursing = false, line = document.getElementById('console').getElementsByClassName('line')[0], raw = line.innerHTML, command = "";
+    function fixCursor(){
+        if(cursing){
+            cursing = false;
+            line.innerHTML = raw + command;
+        }else{
+            cursing =true;
+            line.innerHTML = raw + command + '<span style="font-weight: 900">_</span>';
+        }
+    }
+
+    window.onkeydown = function(e){
+        console.dir(e);
+
+        if(e['key'] == "Backspace"){
+            command = command.substr(0, command.length - 1);
+            return;
+        }
+
+        if(e['key'] == "Enter"){
+            parseCommand();
+            return;
+        }
+
+        command += e['key'];
+
+        if(cursing){
+            cursing = false;
+            line.innerHTML = raw + command;
+        }else{
+            cursing =true;
+            line.innerHTML = raw + command + '<span style="font-weight: 900">_</span>';
+        }
+    };
+
+    setInterval(fixCursor, 500);
+
+    function parseCommand(){
+
+    }
+
     var modal = document.getElementsByClassName('modal')[0];
 
     window.onclick = function (event) {
