@@ -213,6 +213,8 @@ body {
     height: 100%;
     background-color: black;
     padding-top: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #console .line{

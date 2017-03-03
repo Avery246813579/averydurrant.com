@@ -95,10 +95,9 @@
     }
 
     window.onkeydown = function(e){
-        console.dir(e);
-
         if(e['key'] == "Backspace"){
             command = command.substr(0, command.length - 1);
+            fixCursor();
             return;
         }
 
@@ -107,21 +106,25 @@
             return;
         }
 
+        if(e['key'].length > 1){
+            return;
+        }
+
         command += e['key'];
 
-        if(cursing){
-            cursing = false;
-            line.innerHTML = raw + command;
-        }else{
-            cursing =true;
-            line.innerHTML = raw + command + '<span style="font-weight: 900">_</span>';
-        }
+        fixCursor();
     };
 
     setInterval(fixCursor, 500);
 
     function parseCommand(){
+        raw += command + "<br>";
 
+        //Do stuff
+        raw += 'C:\\Users\\AveryDurrant>';
+
+        command = "";
+        fixCursor();
     }
 
     var modal = document.getElementsByClassName('modal')[0];
