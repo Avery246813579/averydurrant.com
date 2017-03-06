@@ -30,13 +30,45 @@
     </div>
 </div>
 
-<div id="languages">
-    <div id="blocks">
-        <div class="l-block" style="background-color: chocolate">
-            <div class="expand">Java</div>
+<div id="projects">
+    <div class="project">
+        <div class="name">
+            Commservus
+        </div>
+
+        <div class="description">
+            This is the description
+        </div>
+
+        <div class="language">
+            Javascript, Html, Css, Node
         </div>
     </div>
+
+    <div class="divider"></div>
+
+    <div class="project">
+
+    </div>
+
+    <div class="project">
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="project">
+
+    </div>
 </div>
+
+<!--<div id="languages">-->
+    <!--<div id="blocks">-->
+        <!--<div class="l-block" style="background-color: chocolate">-->
+            <!--<div class="expand">Java</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="modal">
     <div class="content">
@@ -83,6 +115,8 @@
 <script src="assets/scripts/helper.js"></script>
 <script src="assets/scripts/iconfall.js"></script>
 <script>
+//    location.href = "#console";
+
     var cursing = false, line = document.getElementById('console').getElementsByClassName('line')[0], raw = line.innerHTML, command = "";
     function fixCursor(){
         if(cursing){
@@ -117,10 +151,19 @@
 
     setInterval(fixCursor, 500);
 
+    var COMMANDS = {
+        HTML: "Very nice markup"
+    };
+
     function parseCommand(){
         raw += command + "<br>";
 
-        //Do stuff
+        for(var key in COMMANDS){
+            if(COMMANDS.hasOwnProperty(key) && command.toUpperCase().trim() == key){
+                raw += COMMANDS[key] + "<br>";
+            }
+        }
+
         raw += 'C:\\Users\\AveryDurrant>';
 
         command = "";
@@ -183,7 +226,7 @@
                     modal.style.display = "block";
 
                     setTimeout(function () {
-                        document.getElementById('J1').style.width = "50%"
+                        document.getElementById('J1').style.width = "50%";
                         document.getElementById('J2').style.width = "25%"
                     }, 100);
                 };
