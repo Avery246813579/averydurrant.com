@@ -11,22 +11,20 @@
 <!--<canvas id="myCanvas"></canvas>-->
 
 <!--<div id="iconfall">-->
-    <!--<div class="text">-->
-        <!--Avery Durrant-->
-    <!--</div>-->
+<!--<div class="text">-->
+<!--Avery Durrant-->
+<!--</div>-->
 <!--</div>-->
 
-<div id="console">
-    <div class="line">
-        Frostbyte Gat-OS [Version 1.0.0]<br>
-        (C) Avery Durrant<br><br>
-        C:\Users\AveryDurrant> knowledge<br>
-        For more knowledge on Avery's knowledge or his projects on an element. Type the command-name into chat or click on it.<br>
-        <p>HTML&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Description</p>
-        <p>JAVACSRIPT&emsp;&emsp;&emsp;&emsp;&emsp;Description</p>
-        <p>JAVA&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Description</p>
-        <p>C++&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Description</p><br>
-        C:\Users\AveryDurrant>
+<div id="cwrap">
+    <div id="console">
+        <div class="line">
+            Frostbyte Gat-OS [Version 1.0.0]<br>
+            (C) Avery Durrant<br><br>
+            C:\Users\AveryDurrant> knowledge<br>
+            For more knowledge on Avery's knowledge or his projects on an element. Type the command-name into chat or
+            click on it.<br>
+        </div>
     </div>
 </div>
 
@@ -60,14 +58,48 @@
     <div class="project">
 
     </div>
+
+    <div class="project">
+        <div class="name">
+            Commservus
+        </div>
+
+        <div class="description">
+            This is the description
+        </div>
+
+        <div class="language">
+            Javascript, Html, Css, Node
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="project">
+        <div class="name">
+            Commservus
+        </div>
+
+        <div class="description">
+            This is the description
+        </div>
+
+        <div class="language">
+            Javascript, Html, Css, Node
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    a
 </div>
 
 <!--<div id="languages">-->
-    <!--<div id="blocks">-->
-        <!--<div class="l-block" style="background-color: chocolate">-->
-            <!--<div class="expand">Java</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div id="blocks">-->
+<!--<div class="l-block" style="background-color: chocolate">-->
+<!--<div class="expand">Java</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 
 <div class="modal">
@@ -115,32 +147,32 @@
 <script src="assets/scripts/helper.js"></script>
 <script src="assets/scripts/iconfall.js"></script>
 <script>
-//    location.href = "#console";
+    //    location.href = "#console";
 
     var cursing = false, line = document.getElementById('console').getElementsByClassName('line')[0], raw = line.innerHTML, command = "";
-    function fixCursor(){
-        if(cursing){
+    function fixCursor() {
+        if (cursing) {
             cursing = false;
             line.innerHTML = raw + command;
-        }else{
-            cursing =true;
+        } else {
+            cursing = true;
             line.innerHTML = raw + command + '<span style="font-weight: 900">_</span>';
         }
     }
 
-    window.onkeydown = function(e){
-        if(e['key'] == "Backspace"){
+    window.onkeydown = function (e) {
+        if (e['key'] == "Backspace") {
             command = command.substr(0, command.length - 1);
             fixCursor();
             return;
         }
 
-        if(e['key'] == "Enter"){
+        if (e['key'] == "Enter") {
             parseCommand();
             return;
         }
 
-        if(e['key'].length > 1){
+        if (e['key'].length > 1) {
             return;
         }
 
@@ -152,22 +184,61 @@
     setInterval(fixCursor, 500);
 
     var COMMANDS = {
-        HTML: "Very nice markup"
+        HTML: {
+            DESCRIPTION: "The best language",
+            TEXT: "Very nice markup"
+        },
+        CSS: {
+            DESCRIPTION: "A lit language",
+            TEXT: "Dogs"
+        },
+        JAVASCRIPT: {
+            DESCRIPTION: "It's alright",
+            TEXT: "Cats"
+        }
     };
 
-    function parseCommand(){
+    init();
+    function init(){
+        for(var key in COMMANDS){
+            if(COMMANDS.hasOwnProperty(key)){
+                console.log(getSpaces(20 - key.length));
+                raw += key + getSpaces(20 - key.length) + COMMANDS[key]['DESCRIPTION'] + "<br>";
+            }
+        }
+
+        parseCommand();
+    }
+
+    function getSpaces(left){
+        if(left < 1){
+            return "&nbsp;";
+        }
+
+        return "&nbsp;" + getSpaces(left - 1);
+    }
+
+    function parseCommand() {
         raw += command + "<br>";
 
-        for(var key in COMMANDS){
-            if(COMMANDS.hasOwnProperty(key) && command.toUpperCase().trim() == key){
-                raw += COMMANDS[key] + "<br>";
+        var FOUND = false;
+        for (var key in COMMANDS) {
+            if (COMMANDS.hasOwnProperty(key) && command.toUpperCase().trim() == key) {
+                raw += COMMANDS[key]['TEXT'] + "<br><br>";
+                FOUND = true;
             }
+        }
+
+        if(!FOUND && command.trim() != ""){
+            raw += "'" + command.trim() + "' is not recognized as an internal or external command.<br><br>";
         }
 
         raw += 'C:\\Users\\AveryDurrant>';
 
         command = "";
         fixCursor();
+
+        document.getElementById('console').scrollTop = document.getElementById('console').scrollHeight;
     }
 
     var modal = document.getElementsByClassName('modal')[0];
@@ -180,59 +251,59 @@
         }
     };
 
-    readTextFile('assets/json/languages.JSON', function (err, payload) {
-        if (err) {
-            console.log("ERROR");
-            return;
-        }
-
-        var content = JSON.parse(payload), toAdd = '<center>What I know:</center><div class="row">';
-        for(var j = 0; j < content.length; j++) {
-            toAdd += '<div class="l-block" style="background-color: chocolate;"><div class="expand">' + content[j]['name'] + '</div></div>';
-
-            if (j == 6 || j == 11) {
-                toAdd += '</div>';
-
-                if(j == 5){
-                    toAdd += '<div class="row">'
-                }
-            }
-        }
-
-        document.getElementById('languages').innerHTML = toAdd;
-
-        var languages = document.getElementsByClassName('l-block');
-        for (var i = 0; i < languages.length; i++) {
-            (function () {
-                var expand = languages[i].getElementsByClassName('expand')[0];
-
-                var lang = languages[i];
-                setTimeout(function () {
-                    lang.style.height = "200px";
-                    lang.style.width = "200px";
-                }, 500);
-
-                languages[i].onmouseover = function () {
-                    expand.style.top = "50px";
-                    lang.parentElement.style.height = "250px";
-                };
-
-                languages[i].onmouseout = function () {
-                    expand.style.top = "40px";
-                    lang.parentElement.style.height = "225px";
-                };
-
-                languages[i].onclick = function () {
-                    modal.style.display = "block";
-
-                    setTimeout(function () {
-                        document.getElementById('J1').style.width = "50%";
-                        document.getElementById('J2').style.width = "25%"
-                    }, 100);
-                };
-            })();
-        }
-    });
+//    readTextFile('assets/json/languages.JSON', function (err, payload) {
+//        if (err) {
+//            console.log("ERROR");
+//            return;
+//        }
+//
+//        var content = JSON.parse(payload), toAdd = '<center>What I know:</center><div class="row">';
+//        for (var j = 0; j < content.length; j++) {
+//            toAdd += '<div class="l-block" style="background-color: chocolate;"><div class="expand">' + content[j]['name'] + '</div></div>';
+//
+//            if (j == 6 || j == 11) {
+//                toAdd += '</div>';
+//
+//                if (j == 5) {
+//                    toAdd += '<div class="row">'
+//                }
+//            }
+//        }
+//
+//        document.getElementById('languages').innerHTML = toAdd;
+//
+//        var languages = document.getElementsByClassName('l-block');
+//        for (var i = 0; i < languages.length; i++) {
+//            (function () {
+//                var expand = languages[i].getElementsByClassName('expand')[0];
+//
+//                var lang = languages[i];
+//                setTimeout(function () {
+//                    lang.style.height = "200px";
+//                    lang.style.width = "200px";
+//                }, 500);
+//
+//                languages[i].onmouseover = function () {
+//                    expand.style.top = "50px";
+//                    lang.parentElement.style.height = "250px";
+//                };
+//
+//                languages[i].onmouseout = function () {
+//                    expand.style.top = "40px";
+//                    lang.parentElement.style.height = "225px";
+//                };
+//
+//                languages[i].onclick = function () {
+//                    modal.style.display = "block";
+//
+//                    setTimeout(function () {
+//                        document.getElementById('J1').style.width = "50%";
+//                        document.getElementById('J2').style.width = "25%"
+//                    }, 100);
+//                };
+//            })();
+//        }
+//    });
 </script>
 
 </body>
