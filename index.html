@@ -3,308 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Avery Durrant</title>
-    <link rel="stylesheet" type="text/css" href="assets/style/general.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="assets/resources/FCP/FCP.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            min-height: 100% !important;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        body {
+            background-color: #E0E0E0;
+        }
+
+        #wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        #console {
+            width: 90% !important;
+            height: 95% !important;
+        }
+    </style>
 </head>
-<body onloadstart="">
+<body>
 
-<!--<canvas id="myCanvas"></canvas>-->
-
-<!--<div id="iconfall">-->
-<!--<div class="text">-->
-<!--Avery Durrant-->
-<!--</div>-->
-<!--</div>-->
-
-<div id="cwrap">
+<div id="wrapper">
     <div id="console">
         <div class="line">
-            Frostbyte Gat-OS [Version 1.0.0]<br>
-            (C) Avery Durrant<br><br>
-            C:\Users\AveryDurrant> knowledge<br>
-            For more knowledge on Avery's knowledge or his projects on an element. Type the command-name into chat or
-            click on it.<br>
+            GatOS [Version 1.0.0]<br>Providing information about the developer while his website is under
+            development.<br><br>Displaying
+            commands:<br>
         </div>
     </div>
 </div>
 
-<div id="projects">
-    <div class="project">
-        <div class="name">
-            Commservus
-        </div>
-
-        <div class="description">
-            This is the description
-        </div>
-
-        <div class="language">
-            Javascript, Html, Css, Node
-        </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="project">
-
-    </div>
-
-    <div class="project">
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="project">
-
-    </div>
-
-    <div class="project">
-        <div class="name">
-            Commservus
-        </div>
-
-        <div class="description">
-            This is the description
-        </div>
-
-        <div class="language">
-            Javascript, Html, Css, Node
-        </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="project">
-        <div class="name">
-            Commservus
-        </div>
-
-        <div class="description">
-            This is the description
-        </div>
-
-        <div class="language">
-            Javascript, Html, Css, Node
-        </div>
-    </div>
-</div>
-
-<div id="about">
-    a
-</div>
-
-<!--<div id="languages">-->
-<!--<div id="blocks">-->
-<!--<div class="l-block" style="background-color: chocolate">-->
-<!--<div class="expand">Java</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-<div class="modal">
-    <div class="content">
-        <div class="wrapper">
-            <div class="side">
-                <img src="assets/images/Java.png" class="image" width="200px" height="200px">
-                Comfort:
-                <div id="J1" class="bar"></div>
-                <br>
-                Knowledge:
-                <div id="J2" class="bar">2 Years</div>
-            </div>
-
-            <div class="projects" style="float: left">
-                <div class="project">
-                    SFD
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--<div id="test3" class="test">-->
-<!--Java:<br>-->
-<!--<span>D</span>-->
-
-<!--<div id="J1" style="background-color: brown">Knowledge</div>-->
-<!--<br>-->
-
-<!--<div id="J2" style="background-color: crimson">Years Learnt</div>-->
-<!--<br>-->
-
-<!--<div id="J3" style="background-color: chocolate">Dogs</div>-->
-<!--</div>-->
-
-<!--<div class="language">-->
-<!--Java:-->
-<!--<div class="block">-->
-<!--<span id="test" class="animate"></span>-->
-<!--<span id="test2" class="animate"></span>-->
-<!--</div>-->
-<!--</div>-->
-
-<script src="assets/scripts/helper.js"></script>
-<script src="assets/scripts/iconfall.js"></script>
+<script src="assets/resources/FCP/FCP.min.js"></script>
 <script>
-    //    location.href = "#console";
+    var Console = new Console('console', 'C:\\Users\\Avery Durrant>', [
+        new Command('INFO', 'Info about the developer', function (console) {
+            console.sendLine('Avery is a developer. He is 18 years old and is a senior in high school. He has been developing for 6+ years.<br>');
+        }),
+        new Command('PROJECTS', "Sends you to the developers github", function (console) {
+            window.open('', '_blank').location = "https://github.com/Avery246813579";
+            console.sendLine("Github page was opened in a new tab<br>");
+        }),
+        new Command('CONTACT', "Returns Avery's contact info", function (console) {
+            console.sendLine("Contact Avery using his email: avery@frostbyte.co<br>");
+        }),
+        new Command('KNOWLEDGE', "See what Avery knows how to use", function (console) {
+            console.sendLine("I know the following languages and resources:<br>" +
+                    "- HTML" + "<br>"
+                    + "- CSS" + "<br>"
+                    + "- JAVASCRIPT" + "<br>"
+                    + "- JAVA" + "<br>"
+                    + "- C++" + "<br>"
+                    + "- C#" + "<br>"
+                    + "- Python" + "<br>"
+                    + "- Ruby" + "<br>"
+                    + "- Node.js" + "<br>"
+                    + "- PHP" + "<br>"
+                    + "- GIT" + "<br>"
+                    + "- jQuery" + "<br>"
+                    + "- SQL" + "<br>"
+                    + "- Xamarin" + "<br><br>Avery Dabbles with the following:<br>"
+                    + "- Programming C" + "<br>"
+                    + "- Swift" + "<br>"
+            );
+        })
+    ]);
 
-    var cursing = false, line = document.getElementById('console').getElementsByClassName('line')[0], raw = line.innerHTML, command = "";
-    function fixCursor() {
-        if (cursing) {
-            cursing = false;
-            line.innerHTML = raw + command;
-        } else {
-            cursing = true;
-            line.innerHTML = raw + command + '<span style="font-weight: 900">_</span>';
-        }
-    }
-
-    window.onkeydown = function (e) {
-        if (e['key'] == "Backspace") {
-            command = command.substr(0, command.length - 1);
-            fixCursor();
-            return;
-        }
-
-        if (e['key'] == "Enter") {
-            parseCommand();
-            return;
-        }
-
-        if (e['key'].length > 1) {
-            return;
-        }
-
-        command += e['key'];
-
-        fixCursor();
-    };
-
-    setInterval(fixCursor, 500);
-
-    var COMMANDS = {
-        HTML: {
-            DESCRIPTION: "The best language",
-            TEXT: "Very nice markup"
-        },
-        CSS: {
-            DESCRIPTION: "A lit language",
-            TEXT: "Dogs"
-        },
-        JAVASCRIPT: {
-            DESCRIPTION: "It's alright",
-            TEXT: "Cats"
-        }
-    };
-
-    init();
-    function init(){
-        for(var key in COMMANDS){
-            if(COMMANDS.hasOwnProperty(key)){
-                console.log(getSpaces(20 - key.length));
-                raw += key + getSpaces(20 - key.length) + COMMANDS[key]['DESCRIPTION'] + "<br>";
-            }
-        }
-
-        parseCommand();
-    }
-
-    function getSpaces(left){
-        if(left < 1){
-            return "&nbsp;";
-        }
-
-        return "&nbsp;" + getSpaces(left - 1);
-    }
-
-    function parseCommand() {
-        raw += command + "<br>";
-
-        var FOUND = false;
-        for (var key in COMMANDS) {
-            if (COMMANDS.hasOwnProperty(key) && command.toUpperCase().trim() == key) {
-                raw += COMMANDS[key]['TEXT'] + "<br><br>";
-                FOUND = true;
-            }
-        }
-
-        if(!FOUND && command.trim() != ""){
-            raw += "'" + command.trim() + "' is not recognized as an internal or external command.<br><br>";
-        }
-
-        raw += 'C:\\Users\\AveryDurrant>';
-
-        command = "";
-        fixCursor();
-
-        document.getElementById('console').scrollTop = document.getElementById('console').scrollHeight;
-    }
-
-    var modal = document.getElementsByClassName('modal')[0];
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.getElementById('J1').style.width = "0%";
-            document.getElementById('J2').style.width = "0%";
-        }
-    };
-
-//    readTextFile('assets/json/languages.JSON', function (err, payload) {
-//        if (err) {
-//            console.log("ERROR");
-//            return;
-//        }
-//
-//        var content = JSON.parse(payload), toAdd = '<center>What I know:</center><div class="row">';
-//        for (var j = 0; j < content.length; j++) {
-//            toAdd += '<div class="l-block" style="background-color: chocolate;"><div class="expand">' + content[j]['name'] + '</div></div>';
-//
-//            if (j == 6 || j == 11) {
-//                toAdd += '</div>';
-//
-//                if (j == 5) {
-//                    toAdd += '<div class="row">'
-//                }
-//            }
-//        }
-//
-//        document.getElementById('languages').innerHTML = toAdd;
-//
-//        var languages = document.getElementsByClassName('l-block');
-//        for (var i = 0; i < languages.length; i++) {
-//            (function () {
-//                var expand = languages[i].getElementsByClassName('expand')[0];
-//
-//                var lang = languages[i];
-//                setTimeout(function () {
-//                    lang.style.height = "200px";
-//                    lang.style.width = "200px";
-//                }, 500);
-//
-//                languages[i].onmouseover = function () {
-//                    expand.style.top = "50px";
-//                    lang.parentElement.style.height = "250px";
-//                };
-//
-//                languages[i].onmouseout = function () {
-//                    expand.style.top = "40px";
-//                    lang.parentElement.style.height = "225px";
-//                };
-//
-//                languages[i].onclick = function () {
-//                    modal.style.display = "block";
-//
-//                    setTimeout(function () {
-//                        document.getElementById('J1').style.width = "50%";
-//                        document.getElementById('J2').style.width = "25%"
-//                    }, 100);
-//                };
-//            })();
-//        }
-//    });
+    Console.addCommands([
+        new Command('CATTLAUER', 'Reporting', function (console) {
+            document.body.innerHTML = "hehe xD";
+        })
+    ]);
 </script>
-
 </body>
 </html>
