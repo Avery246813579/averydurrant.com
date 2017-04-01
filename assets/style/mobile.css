@@ -11,11 +11,10 @@
 html, body, #fullheight {
     min-height: 100% !important;
     height: 100%;
-    overflow-x: hidden;
 }
 
 body {
-    background-color: #E0E0E0;
+    background-color: #0094FF;
 }
 
 #myCanvas{
@@ -24,7 +23,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 10;
 }
 
 #iconfall{
@@ -39,7 +38,7 @@ body {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    z-index: 10;
+    z-index: 100;
 }
 
 #navbar {
@@ -82,8 +81,7 @@ body {
 }
 
 .row{
-    height: 225px;
-    overflow: hidden;
+    height: 125px;
 
     -webkit-transition: height 1s ease-in-out;
     -moz-transition: height 1s ease-in-out;
@@ -120,12 +118,12 @@ body {
 
 .expand {
     position: relative;
-    top: 40px;
+    top: 40px
 }
 
 .l-block:hover {
-    width: 20% !important;
-    height: 20% !important;
+    width: 125px !important;
+    height: 125px !important;
 
     -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
     -moz-transition: width 1s ease-in-out, height 1s ease-in-out;
@@ -161,7 +159,7 @@ body {
     background-color: #F3F3F4;
     top: 10%;
     width: 40%;
-    height: 400px;
+    height: 450px;
     margin: auto;
     position: relative;
     z-index: 101;
@@ -177,7 +175,6 @@ body {
 .modal .content .wrapper .side{
     width: 25%;
     height: 100%;
-    background-color: red;
     float: left;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -193,7 +190,6 @@ body {
 .modal .content .wrapper .projects{
     height: 100%;
     width: 75%;
-    background-color: chartreuse;
     float: left;
     padding-top: 25px;
 
@@ -207,29 +203,6 @@ body {
     width: 90%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     background-color: #F3F3F4;
-}
-
-#console{
-    width: 90%;
-    margin: auto;
-    height: 95%;
-    background-color: black;
-    padding-top: 5px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-top: 1%;
-    word-wrap: break-word;
-}
-
-#cwrap{
-    width: 100%;
-    height: 100%;
-}
-
-#console .line{
-    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
-    color: white;
-    line-height: 18px;
 }
 
 /*.block {*/
@@ -295,71 +268,4 @@ body {
     100% {
         width: 200px;
     }
-}
-
-#projects{
-    width: 100%;
-    min-height: 100%;
-    background-color: #E0E0E0;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-    overflow: hidden;
-}
-
-#projects .project{
-    position: relative;
-    width: 37.5%;
-    height: 150px;
-    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    margin-top: 10px;
-    float: left;
-
-    padding: 10px;
-}
-
-#projects .project .name div{
-    font-family: Verdana, Geneva, sans-serif;
-}
-
-#projects .project .name{
-    color: #0094FF;
-    font-size: 18px;
-    font-family: Verdana, Geneva, sans-serif;
-}
-
-#projects .project .description{
-    padding-top: 15px;
-    color: black;
-    font-size: 13px;
-}
-
-#projects .project .description div{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#projects .project .language{
-    position: absolute;
-    bottom: 10px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 15px;
-}
-
-
-#projects .divider{
-    width: 5%;
-    height: 5px;
-    float: left;
-}
-
-#about{
-    width: 100%;
-    height: 100%;
-}
-
-#about .content{
-    margin: auto;
-    text-align: center;
-    top: 40%;
 }
