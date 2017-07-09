@@ -1,365 +1,77 @@
-@font-face {
-    font-family: "Octovetica";
-    src: url('Octovetica.ttf');
-}
-
 * {
     padding: 0;
     margin: 0;
 }
 
-html, body, #fullheight {
+html, body {
     min-height: 100% !important;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-body {
     background-color: #E0E0E0;
-}
-
-#myCanvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    z-index: 0;
 }
 
-#iconfall{
-    display: table;
-    width: 100%;
-    height: 100%;
-    font-size: 100px;
-}
+/*
+    Content Stuff
+*/
 
-#iconfall .text{
-    margin: auto;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    z-index: 10;
-}
-
-#navbar {
-    margin: auto;
-    background-color: red;
+#content{
+    margin: 10px auto 10px auto;
     width: 80%;
-    margin-top: 20px;
-    height: 50px;
-}
-
-#navbar .element {
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    font-size: 35px;
-    font-family: Octovetica, sans-serif;
-    position: relative;
-    padding-top: 10px;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
-#navbar .element:hover {
-    background-color: crimson;
-    position: relative;
-    cursor: pointer;
-}
-
-.bar {
-    width: 0;
-    height: 50px;
-    background-color: tomato;
-    -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
-    text-align: center;
-    overflow: hidden;
-}
-
-.row{
-    height: 225px;
-    overflow: hidden;
-
-    -webkit-transition: height 1s ease-in-out;
-    -moz-transition: height 1s ease-in-out;
-    -o-transition: height 1s ease-in-out;
-    transition: height 1s ease-in-out;
-}
-
-#languages{
-    width: 90%;
-    margin: auto;
+    max-width: 800px;
     background-color: #F3F3F3;
-    padding-bottom: 25px;
 }
 
-#blocks{
-    margin: auto;
+#content .quick{
+
 }
 
-.l-block {
-    height: 0px;
-    width: 0px;
-    -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out, height 1s ease-in-out;
-    -o-transition: width 1s ease-in-out, height 1s ease-in-out;
-    transition: width 1s ease, height 1s ease-in-out;
-
-    float: left;
-    margin-left: 25px;
-    margin-top: 25px;
-
-    text-align: center;
-    overflow: hidden;
-}
-
-.expand {
-    position: relative;
-    top: 40px;
-}
-
-.l-block:hover {
-    width: 20% !important;
-    height: 20% !important;
-
-    -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out, height 1s ease-in-out;
-    -o-transition: width 1s ease-in-out, height 1s ease-in-out;
-    transition: width 1s ease, height 1s ease-in-out;
-    cursor: pointer;
-}
-
-.l-block div {
-    position: relative;
-    top: 40px;
-
-    -webkit-transition: top 1s ease-in-out, height 1s ease-in-out;
-    -moz-transition: top 1s ease-in-out, height 1s ease-in-out;
-    -o-transition: top 1s ease-in-out, height 1s ease-in-out;
-    transition: top 1s ease, height 1s ease-in-out;
-}
-
-.modal {
+#content .quick .title{
     width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    transition: all 0.5s ease;
-}
-
-.modal .content {
-    background-color: #F3F3F4;
-    top: 10%;
-    width: 40%;
-    height: 400px;
-    margin: auto;
-    position: relative;
-    z-index: 101;
-    overflow: auto;
-}
-
-.modal .content .wrapper{
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-
-.modal .content .wrapper .side{
-    width: 25%;
-    height: 100%;
-    background-color: red;
-    float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-
-    padding-left: 25px;
-}
-
-.modal .content .wrapper .image {
-    padding-top: 25px;
-}
-
-.modal .content .wrapper .projects{
-    height: 100%;
-    width: 75%;
-    background-color: chartreuse;
-    float: left;
-    padding-top: 25px;
-
-    padding-left: 10%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
-.modal .content .wrapper .project{
-    width: 90%;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    background-color: #F3F3F4;
-}
-
-#console{
-    width: 90%;
-    margin: auto;
-    height: 95%;
-    background-color: black;
-    padding-top: 5px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-top: 1%;
-    word-wrap: break-word;
-}
-
-#cwrap{
-    width: 100%;
-    height: 100%;
-}
-
-#console .line{
-    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
-    color: white;
-    line-height: 18px;
-}
-
-/*.block {*/
-/*width: 500px;*/
-/*background-color: white;*/
-/*height: 40px;*/
-/*-moz-border-radius: 25px;*/
-/*-webkit-border-radius: 25px;*/
-/*border-radius: 25px;*/
-/*padding: 10px;*/
-/*box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);*/
-/*position: relative;*/
-/*}*/
-
-/*.language .block span {*/
-/*display: block;*/
-/*height: 50%;*/
-/*border-top-right-radius: 8px;*/
-/*border-bottom-right-radius: 8px;*/
-/*border-top-left-radius: 20px;*/
-/*border-bottom-left-radius: 20px;*/
-/*background-color: rgb(43, 194, 83);*/
-/*box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),*/
-/*inset 0 -2px 6px rgba(0, 0, 0, 0.4);*/
-/*position: relative;*/
-/*overflow: hidden;*/
-/*-webkit-transition: width 2s; /!* Safari *!/*/
-/*width: 0%;*/
-/*animation: move 1s linear infinite;*/
-/*}*/
-
-/*.language .block span:after {*/
-/*content: "";*/
-/*position: absolute;*/
-/*top: 0;*/
-/*left: 0;*/
-/*bottom: 0;*/
-/*right: 0;*/
-/*background-image: linear-gradient(*/
-/*-45deg,*/
-/*rgba(255, 255, 255, .2) 25%,*/
-/*transparent 25%,*/
-/*transparent 50%,*/
-/*rgba(255, 255, 255, .2) 50%,*/
-/*rgba(255, 255, 255, .2) 75%,*/
-/*transparent 75%,*/
-/*transparent*/
-/*);*/
-/*z-index: 1;*/
-/*background-size: 50px 50px;*/
-/*animation: move 2s linear infinite;*/
-/*border-top-right-radius: 8px;*/
-/*border-bottom-right-radius: 8px;*/
-/*border-top-left-radius: 20px;*/
-/*border-bottom-left-radius: 20px;*/
-/*overflow: hidden;*/
-/*}*/
-
-@keyframes move {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 200px;
-    }
-}
-
-#projects{
-    width: 100%;
-    min-height: 100%;
-    background-color: #E0E0E0;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-    overflow: hidden;
-}
-
-#projects .project{
-    position: relative;
-    width: 37.5%;
-    height: 150px;
-    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    margin-top: 10px;
-    float: left;
-
+    color: #008CFF;
+    font-size: 22px;
     padding: 10px;
 }
 
-#projects .project .name div{
-    font-family: Verdana, Geneva, sans-serif;
-}
+/*
+    Navigation Bar Stuff
+*/
 
-#projects .project .name{
-    color: #0094FF;
-    font-size: 18px;
-    font-family: Verdana, Geneva, sans-serif;
-}
-
-#projects .project .description{
-    padding-top: 15px;
-    color: black;
-    font-size: 13px;
-}
-
-#projects .project .description div{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#projects .project .language{
-    position: absolute;
-    bottom: 10px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 15px;
-}
-
-
-#projects .divider{
-    width: 5%;
-    height: 5px;
-    float: left;
-}
-
-#about{
+#nav{
     width: 100%;
-    height: 100%;
+    height: 40px;
+    background-color: #008CFF;
+    text-align: center;
 }
 
-#about .content{
+#nav .center{
+    font-size: 30px;
+    font-weight: bold;
     margin: auto;
-    text-align: center;
-    top: 40%;
+    width: 220px;
+    float: left;
+    margin-top: 3px;
+}
+
+#nav .left{
+    font-size: 20px;
+    margin-top: 10px;
+    float: left;
+    text-align: right;
+    width: calc(50% - 110px);
+}
+
+#nav .right{
+    font-size: 20px;
+    margin-top: 10px;
+    float: left;
+    text-align: left;
+    width: calc(50% - 110px);
+}
+
+#nav a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#nav a:hover {
+    color: brown;
 }
