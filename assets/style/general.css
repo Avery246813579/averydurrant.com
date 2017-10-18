@@ -5,4 +5,11 @@
 
 body{
     background-color: #008CFF;
+    margin: auto;
+    text-align: center;
+}
+
+#pad{
+    margin: 0 20%;
+    text-align: left;
 }
