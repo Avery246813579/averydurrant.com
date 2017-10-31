@@ -3,169 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <title>Avery Durrant</title>
+    <meta name="viewport" content="width=device-width">
 
-    <link type="text/css" rel="stylesheet" href="assets/style/general.css" />
+    <style>
+        @font-face {
+            font-family: Baskerville;
+            src: url(assets/fonts/LibreBaskerville-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: Baskerville;
+            src: url(assets/fonts/LibreBaskerville-Bold.ttf);
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Baskerville";
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        #greeting {
+            background-color: #8A2BE2;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #projects {
+            height: 100vh;
+            background-color: #3c55e4;
+        }
+
+        #experience {
+            height: 100vh;
+            background-color: #0ec384;
+        }
+
+        #blogs {
+            height: 100vh;
+            background-color: #E81EB6;
+        }
+
+        #greeting .icon {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        #greeting .icon i:hover {
+            color: black;
+        }
+
+        #greeting .text {
+            padding-top: 40vh;
+        }
+
+        #greeting .text .name {
+            font-size: 40px;
+            font-weight: bold;
+            color: #242424;
+        }
+
+        #greeting .text .tag {
+            font-size: 20px;
+            color: #242424;
+        }
+
+        #greeting .media {
+            display: inline-block;
+            padding: 0 20px;
+            visibility: hidden;
+            color: #383838;
+        }
+
+        #greeting .media a{
+            text-decoration: none;
+        }
+
+        #greeting .media i:hover{
+            color: black;
+        }
+
+        #greeting .media i:visited{
+            color: black;
+        }
+
+        #nav {
+            float: left;
+            width: 100%;
+            height: 40px;
+            top: 0;
+        }
+
+        #nav .element {
+            float: left;
+            width: 33.33%;
+            text-align: center;
+            height: 40px;
+            font-size: 30px;
+            padding-top: 5px;
+            font-weight: bold;
+            color: #262626;
+        }
+
+        #arrow {
+            visibility: hidden;
+        }
+    </style>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-    Avery Durrant<br>
-    Full Stack Developer<br>
-    Student at Make School<br>
-    Machine Learning Enthusiast<br>
+<div id="greeting">
+    <div class="text">
+        <div class="name" id="name"></div>
+        <div class="tag" id="tag"></div>
+        <br/>
 
-    <br>
-
-    I have been programming for over 6 years of my life.<br>
-
-    <br>
-
-    I love Java, Javascript, Python and C#.<br>
-    I love playing with React, React-Native, Xamarin.<br>
-    I love framing with Node.js, Flask, Rails<br>
-    I love using SQL, Git, Slack.<br>
-    I commit everyday and over communicate<br>
-    I love learning new things and helping the community <br>
-    Checkout some of my cross platform projects<br>
-
-    <div id="big-projects">
-        <div class="project">
-            <div class="name">
-                Commservus (Open Source) (Node.js, React-Native, React)
+        <div class="medias">
+            <div class="media" id="linkedin">
+                <a href="https://www.linkedin.com/in/avery-durrant/" target="_blank">
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                </a>
             </div>
-            Project Lead and Server
-            <div class="description">
-                A network where you can find, track, and host community service events. We have an ios app, android app,
-                and website!
+
+            <div class="media" id="github">
+                <a href="https://github.com/Avery246813579" target="_blank">
+                    <i class="fa fa-github fa-3x"></i>
+                </a>
+            </div>
+
+            <div class="media" id="email">
+                <a href="mailto:avery@frostbyte.co" target="_blank">
+                    <i class="fa fa-envelope fa-3x"></i>
+                </a>
             </div>
         </div>
-        <div class="project">
-            <div class="name">
-                Mentor (Open Source) (Node.js, React-Native, React)
-            </div>
-            Server and App
-            <div class="description">
-                An app to connect mentors with mentees
-            </div>
-        </div>
-        <div class="project">
-            <div class="name">
-                Instact
-            </div>
-            App and Server
-            <div class="description">
-                The new age of contacts
-            </div>
+
+
+        <div class="icon">
+            <a href="#projects">
+                <i class="fa fa-angle-down fa-4x" id="arrow"></i>
+            </a>
         </div>
     </div>
+    <!--# Projects | Experience | Blogs-->
+</div>
 
-    Check out some of my personal projects<br>
-
-    <div id="small-projects">
-        <div class="project">
-            <div class="name">
-                Obama Speech Tweet Generator (Open Source) (Python, Flask)
-            </div>
-
-            <div class="description">
-                Using all of Obama's Speeches, we generate a unique sentence using a Markov Chain. In particular the
-                Alan Davis method.
-            </div>
+<div id="nav">
+    <a class="text" href="#projects">
+        <div class="element" style="background-color: #3c55e4">
+            Projects
         </div>
-        <div class="project">
-            <div class="name">
-                Flappy Evolution Learning (Open Source) (Javascript)
-            </div>
-
-            <div class="description">
-                We use the evolution theory to make a perfect bird. They learn from their mistakes.
-            </div>
+    </a>
+    <a class="text" href="#experience">
+        <div class="element" style="background-color: #00c369">
+            Experience
         </div>
-        <div class="project">
-            <div class="name">
-                Github Framework (Open Source) (Javascript, Python)
-            </div>
-
-            <div class="description">
-                A Chrome Extension that shows what frameworks a Github Repository is using.
-            </div>
+    </a>
+    <a class="text" href="#blogs">
+        <div class="element" style="background-color: #e83cc6">
+            Blogs
         </div>
-        <div class="project">
-            <div class="name">
-                Iconfall (Open Source) (Javascript)
-            </div>
+    </a>
+</div>
 
-            <div class="description">
-                Falling Icons for a Website
-            </div>
-        </div>
-        <div class="project">
-            <div class="name">
-                Frost Game Engine (Open Source) (Java)
-            </div>
+<div id="projects">
+</div>
 
-            <div class="description">
-                Games I make in my fun time
-            </div>
-        </div>
-    </div>
+<div id="experience">
 
-    Check out some of my old projects<br>
+</div>
 
-    <div id="old-projects">
-        <div class="project">
-            <div class="name">
-                TheAveryBot (Game) (Java)
-            </div>
+<div id="blogs">
 
-            <div class="description">
-                A Twitch Chat Bot that could play games, monitor chat, and other stuff
-            </div>
-        </div>
-        <div class="project">
-            <div class="name">
-                Frameshift (Game) (Java)
-            </div>
+</div>
 
-            <div class="description">
-                A 2D Terreria like game that I made on stream
-            </div>
-        </div>
-        <div class="project">
-            <div class="name">
-                JSSQL (Node.ks)
-            </div>
+<script>
+    let TimeText = function (id, text, time, callback) {
+        let ID = document.getElementById(id);
+        let index = 0, last_time = new Date().getTime();
 
-            <div class="description">
-                A Node package to make Sql Simplier
-            </div>
-        </div>
-    </div>
+        let addLetter = function () {
+            if (new Date().getTime() - last_time < time) {
+                requestAnimationFrame(addLetter);
+                return;
+            }
 
-        Check out some of my <a href="medium">blogs</a><br>
-    <div id="blogs">
-        <div class="blog">
-            <div class="name">
-                The Alan Davis Chain (Coming Soon)
-            </div>
-            <div class="description">
-                A Markov Chain with a seeding.
-            </div>
-        </div>
-        <div class="blog">
-            <div class="name">
-                Make School (Coming Soon)
-            </div>
-            <div class="description">
-                The greatest school in the world.
-            </div>
-        </div>
-        <div class="blog">
-            <div class="name">
-                Open Source is the Future (Coming Soon)
-            </div>
-            <div class="description">
-                We need open source to move faster in the future.
-            </div>
-        </div>
-    </div>
+            if (index + 1 > text.length) {
+                if (typeof callback !== "undefined") {
+                    callback();
+                }
+
+                return;
+            }
+
+            if (ID.innerHTML === '<br>') {
+                ID.innerHTML = '';
+            } else {
+                console.log(ID.innerHTML)
+            }
+
+            ID.innerHTML += text[index];
+            index += 1;
+
+            last_time = new Date().getTime();
+            requestAnimationFrame(addLetter)
+        };
+
+        requestAnimationFrame(addLetter);
+    };
+
+    let TimeReduce = function (id, time, callback) {
+        let ID = document.getElementById(id);
+        let last_time = new Date().getTime();
+
+        let addLetter = function () {
+            if (new Date().getTime() - last_time < time) {
+                requestAnimationFrame(addLetter);
+                return;
+            }
+
+            if (ID.innerHTML.length < 2) {
+                ID.innerHTML = '<br />';
+                if (typeof callback !== "undefined") {
+                    callback();
+                }
+
+                return;
+            }
+
+            ID.innerHTML = ID.innerHTML.substr(0, ID.innerHTML.length - 1);
+
+            last_time = new Date().getTime();
+            requestAnimationFrame(addLetter)
+        };
+
+        requestAnimationFrame(addLetter);
+    };
+
+
+    LIKES = ['I love teaching others', 'I like to dance'];
+    let generate_like = function (stop) {
+        new TimeReduce('tag', 50, function () {
+            setTimeout(function () {
+                new TimeText('tag', LIKES[Math.floor(Math.random() * LIKES.length)], 50, function () {
+                    if (typeof stop !== "undefined") {
+                        stop();
+                        return;
+                    }
+
+                    setTimeout(function () {
+                        generate_like();
+                    }, 2500)
+                })
+            }, 250)
+        });
+    };
+
+    new TimeText('name', 'Hi, my name is Avery', 50, function () {
+        setTimeout(function () {
+            new TimeText('tag', 'I have been programming for over 6 years', 50, function () {
+                setTimeout(function () {
+                    generate_like(function () {
+                        setTimeout(function () {
+                            generate_like(function () {
+                                setTimeout(function () {
+
+                                    document.getElementById('linkedin').style.visibility = "visible";
+                                    setTimeout(function () {
+                                        document.getElementById('github').style.visibility = "visible";
+
+                                        setTimeout(function () {
+                                            document.getElementById('email').style.visibility = "visible";
+
+                                            setTimeout(function () {
+                                                document.getElementById('arrow').style.visibility = "visible";
+
+                                                setTimeout(function () {
+                                                    generate_like();
+                                                }, 500)
+                                            }, 500);
+                                        }, 500)
+                                    }, 500)
+                                }, 500);
+                            });
+                        }, 500);
+                    })
+                }, 500)
+            })
+        }, 200);
+    });
+
+    window.onscroll = function () {
+        if (window.scrollY > document.getElementById('greeting').clientHeight) {
+            document.getElementById('nav').style.position = 'fixed';
+        } else {
+            document.getElementById('nav').style.position = 'static';
+        }
+    }
+</script>
 </body>
 </html>
