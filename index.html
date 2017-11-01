@@ -26,27 +26,18 @@
 
         body {
             min-height: 100vh;
+            min-width: 200px;
+            background-color: #8A2BE2;
         }
+
+        /*
+        GREETING
+        */
 
         #greeting {
             background-color: #8A2BE2;
             text-align: center;
             height: 100vh;
-        }
-
-        #projects {
-            height: 100vh;
-            background-color: #3c55e4;
-        }
-
-        #experience {
-            height: 100vh;
-            background-color: #0ec384;
-        }
-
-        #blogs {
-            height: 100vh;
-            background-color: #E81EB6;
         }
 
         #greeting .icon {
@@ -83,17 +74,64 @@
             color: #383838;
         }
 
-        #greeting .media a{
+        #greeting .media a {
             text-decoration: none;
-        }
-
-        #greeting .media i:hover{
             color: black;
         }
 
-        #greeting .media i:visited{
+        #greeting .media i:hover {
             color: black;
         }
+
+        #greeting .media a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*
+        INFO
+        */
+
+        #info {
+            background-color: #3c55e4;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #info .text {
+            padding-top: 40vh;
+        }
+
+        #info .text .name {
+            font-size: 40px;
+            font-weight: bold;
+            color: #242424;
+        }
+
+        #info .text .tag {
+            font-size: 20px;
+            color: #242424;
+        }
+
+        #info .icon {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            bottom: calc(-100vh - 10px);
+            width: 100%;
+        }
+
+        #info .icon a{
+            color: #f9f9f9 !important;
+        }
+
+        #info .icon i:hover {
+            color: black;
+        }
+
+        /*
+        NAVBAR
+        */
 
         #nav {
             float: left;
@@ -115,6 +153,61 @@
 
         #arrow {
             visibility: hidden;
+        }
+
+        #projects {
+            height: 100vh;
+            width: 100%;
+            background-color: #3c55e4;
+            margin: auto;
+        }
+
+        #projects .elements {
+            margin: 0 10%;
+            background-color: #f8f8f8;
+        }
+
+        #projects .elements .element {
+            margin: 10px auto;
+            min-width: 200px;
+            max-width: 500px;
+            display: block;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+
+        #projects .elements .element a {
+            text-decoration: none;
+            color: #3c55e4;
+            padding-right: 10px;
+        }
+
+        #projects .elements .element .name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #projects .elements .element .description {
+            margin-top: 20px;
+        }
+
+        #experience {
+            height: 100vh;
+            background-color: #0ec384;
+        }
+
+        #blogs {
+            height: 100vh;
+            background-color: #E81EB6;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #projects .elements {
+                padding: 0 0;
+            }
+
+            #projects .elements .element {
+            }
         }
     </style>
 
@@ -150,33 +243,110 @@
 
 
         <div class="icon">
-            <a href="#projects">
+            <a href="#info">
                 <i class="fa fa-angle-down fa-4x" id="arrow"></i>
             </a>
         </div>
     </div>
-    <!--# Projects | Experience | Blogs-->
 </div>
 
-<div id="nav">
-    <a class="text" href="#projects">
-        <div class="element" style="background-color: #3c55e4">
-            Projects
+<div id="info">
+    <div class="text">
+        <div class="name" id="info_name">
+            I've been coding for 6+ years
         </div>
-    </a>
-    <a class="text" href="#experience">
-        <div class="element" style="background-color: #00c369">
-            Experience
+        <div class="tag">I know <span id="info_tag"></span></div>
+        <br/>
+
+        <div class="icon">
+            <a href="#projects">
+                <i class="fa fa-angle-down fa-4x"></i>
+            </a>
         </div>
-    </a>
-    <a class="text" href="#blogs">
-        <div class="element" style="background-color: #e83cc6">
-            Blogs
-        </div>
-    </a>
+    </div>
 </div>
+
+
+<!--<div id="nav">-->
+<!--<a class="text" href="#projects">-->
+<!--<div class="element" style="background-color: #3c55e4">-->
+<!--Projects-->
+<!--</div>-->
+<!--</a>-->
+<!--<a class="text" href="#experience">-->
+<!--<div class="element" style="background-color: #b03da8">-->
+<!--Experience-->
+<!--</div>-->
+<!--</a>-->
+<!--<a class="text" href="#blogs">-->
+<!--<div class="element" style="background-color: #db3cb9">-->
+<!--Blogs-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
 
 <div id="projects">
+    <div class="elements">
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning
+            </div>
+            <div class="links">
+                <a href="">
+                    Source
+                </a>
+                <a href="">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I did stuff that was lit and it was really fun. I worked using these things doing that things
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Flappy Machine Learning
+            </div>
+            <div class="languages">
+                Python, Machine Learning
+            </div>
+            <div class="links">
+                <a href="">
+                    Source
+                </a>
+                <a href="">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I did stuff that was lit and it was really fun. I worked using these things doing that things
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                This Thing
+            </div>
+            <div class="languages">
+                Python, Machine Learning
+            </div>
+            <div class="links">
+                <a href="">
+                    Source
+                </a>
+                <a href="">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I did stuff that was lit and it was really fun. I worked using these things doing that things
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="experience">
@@ -184,10 +354,10 @@
 </div>
 
 <div id="blogs">
-
 </div>
 
 <script>
+
     let TimeText = function (id, text, time, callback) {
         let ID = document.getElementById(id);
         let index = 0, last_time = new Date().getTime();
@@ -302,6 +472,26 @@
             })
         }, 200);
     });
+
+        let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
+        let generate_know = function (stop) {
+            new TimeReduce('info_tag', 50, function () {
+                setTimeout(function () {
+                    new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
+                        if (typeof stop !== "undefined") {
+                            stop();
+                            return;
+                        }
+
+                        setTimeout(function () {
+                            generate_like();
+                        }, 2500)
+                    })
+                }, 250)
+            });
+        };
+
+        generate_know();
 
     window.onscroll = function () {
         if (window.scrollY > document.getElementById('greeting').clientHeight) {
