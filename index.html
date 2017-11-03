@@ -27,7 +27,7 @@
         body {
             min-height: 100vh;
             min-width: 200px;
-            background-color: #8A2BE2;
+            background-color: #3c55e4;
         }
 
         /*
@@ -117,11 +117,11 @@
             position: absolute;
             text-align: center;
             margin: auto;
-            bottom: calc(-100vh - 10px);
+            bottom: calc(-100vh);
             width: 100%;
         }
 
-        #info .icon a{
+        #info .icon a {
             color: #f9f9f9 !important;
         }
 
@@ -156,18 +156,30 @@
         }
 
         #projects {
-            height: 100vh;
             width: 100%;
             background-color: #3c55e4;
             margin: auto;
         }
 
-        #projects .elements {
-            margin: 0 10%;
+        /*
+        Elements
+         */
+
+        .elements {
+            margin: 30px 10%;
             background-color: #f8f8f8;
         }
 
-        #projects .elements .element {
+        .elements .title {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #b1b1b1;
+        }
+
+        .elements .element {
             margin: 10px auto;
             min-width: 200px;
             max-width: 500px;
@@ -176,34 +188,31 @@
             padding: 10px;
         }
 
-        #projects .elements .element a {
+        .elements .element a {
             text-decoration: none;
             color: #3c55e4;
             padding-right: 10px;
         }
 
-        #projects .elements .element .name {
+        .elements .element .name {
             font-weight: bold;
             font-size: 20px;
         }
 
-        #projects .elements .element .description {
+        .elements .element .description {
             margin-top: 20px;
         }
 
         #experience {
-            height: 100vh;
-            background-color: #0ec384;
         }
 
         #blogs {
-            height: 100vh;
-            background-color: #E81EB6;
         }
 
         @media only screen and (max-width: 600px) {
-            #projects .elements {
+            .elements {
                 padding: 0 0;
+                margin: 0;
             }
 
             #projects .elements .element {
@@ -287,23 +296,28 @@
 
 <div id="projects">
     <div class="elements">
+        <div class="title">
+            My Projects
+        </div>
+
         <div class="element">
             <div class="name">
                 Rainbow Chain
             </div>
             <div class="languages">
-                Python, Machine Learning
+                Python, Machine Learning, Flask, Sql, React
             </div>
             <div class="links">
-                <a href="">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
                     Source
                 </a>
-                <a href="">
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
                     Live Version
                 </a>
             </div>
             <div class="description">
-                I did stuff that was lit and it was really fun. I worked using these things doing that things
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
             </div>
         </div>
 
@@ -312,14 +326,31 @@
                 Flappy Machine Learning
             </div>
             <div class="languages">
-                Python, Machine Learning
+                Javascript, Machine Learning
             </div>
             <div class="links">
-                <a href="">
+                <a href="https://github.com/Avery246813579/Flappy-Evolutions" target="_blank">
                     Source
                 </a>
-                <a href="">
+                <a href="https://avery246813579.github.io/Flappy-Evolutions/" target="_blank">
                     Live Version
+                </a>
+            </div>
+            <div class="description">
+                I created a machine learning game that had birds learning to solve an obstacle course.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Commservus
+            </div>
+            <div class="languages">
+                Javascript, C#, SQL, Node.js, Xamarin, Mocha, Chai
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Legacy-Commservus-Server" target="_blank">
+                    Server & Website Source
                 </a>
             </div>
             <div class="description">
@@ -329,34 +360,194 @@
 
         <div class="element">
             <div class="name">
-                This Thing
+                SQL Series
             </div>
             <div class="languages">
-                Python, Machine Learning
+                Javascript, Java, PHP, SQL
             </div>
             <div class="links">
-                <a href="">
-                    Source
+                <a href="https://github.com/Avery246813579/JSSQL" target="_blank">
+                    Javascript
                 </a>
-                <a href="">
-                    Live Version
+                <a href="https://github.com/Avery246813579/JSQL" target="_blank">
+                    Java
+                </a>
+                <a href="https://github.com/Avery246813579/PSQL" target="_blank">
+                    PHP
+                </a>
+
+            </div>
+            <div class="description">
+                I wrote a series of APIs that let you use SQL if you didn't know the language.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Hot Potato
+            </div>
+            <div class="languages">
+                Java
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/HotPotato" target="_blank">
+                    Source
                 </a>
             </div>
             <div class="description">
-                I did stuff that was lit and it was really fun. I worked using these things doing that things
+                I developed a Minecraft Plugin that was downloaded over 33k times and used on tens of thousands of
+                Minecraft
+                servers.
             </div>
         </div>
     </div>
 </div>
 
 <div id="experience">
+    <div class="elements">
+        <div class="title">
+            Experience
+        </div>
 
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning, Flask, Sql, React
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
+                    Source
+                </a>
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning, Flask, Sql, React
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
+                    Source
+                </a>
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Hot Potato
+            </div>
+            <div class="languages">
+                Java
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/HotPotato" target="_blank">
+                    Source
+                </a>
+            </div>
+            <div class="description">
+                I developed a Minecraft Plugin that was downloaded over 33k times and used on tens of thousands of
+                Minecraft
+                servers.
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="blogs">
+    <div class="elements">
+        <div class="title">
+            Blogs
+        </div>
+
+        <div class="element">
+            <div class="name">
+                My Experience with Google Foobar: Tips and Tricks for succeeding
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about my experience with the Google Foobar challenge and some tips and tricks
+                on what I think could help people in the future.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                The Rainbow Chain: Generate sentences around a topic (using Middle Out)
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I explain about how to create a Rainbow Chain and the underlying structures it's
+                built on.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Make School: The New College Education
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about a two year college alternative called Make School and my experience
+                and journey to this school.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                The Power of Open Source
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about how an open source technology and software market would greatly
+                improve the market.
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
+    let doFunctions = [];
+
+    function doStuff() {
+        for (let i = 0; i < doFunctions.length; i++) {
+            doFunctions[i]();
+        }
+    }
 
     let TimeText = function (id, text, time, callback) {
         let ID = document.getElementById(id);
@@ -473,25 +664,25 @@
         }, 200);
     });
 
-        let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
-        let generate_know = function (stop) {
-            new TimeReduce('info_tag', 50, function () {
-                setTimeout(function () {
-                    new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
-                        if (typeof stop !== "undefined") {
-                            stop();
-                            return;
-                        }
+    let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
+    let generate_know = function (stop) {
+        new TimeReduce('info_tag', 50, function () {
+            setTimeout(function () {
+                new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
+                    if (typeof stop !== "undefined") {
+                        stop();
+                        return;
+                    }
 
-                        setTimeout(function () {
-                            generate_like();
-                        }, 2500)
-                    })
-                }, 250)
-            });
-        };
+                    setTimeout(function () {
+                        generate_like();
+                    }, 2500)
+                })
+            }, 250)
+        });
+    };
 
-        generate_know();
+    generate_know();
 
     window.onscroll = function () {
         if (window.scrollY > document.getElementById('greeting').clientHeight) {
