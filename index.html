@@ -3,163 +3,694 @@
 <head>
     <meta charset="UTF-8">
     <title>Avery Durrant</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        @font-face {
+            font-family: Baskerville;
+            src: url(assets/fonts/LibreBaskerville-Regular.ttf);
+            font-weight: normal;
+        }
 
-    <link type="text/css" rel="stylesheet" href="assets/style/general.css"/>
+        @font-face {
+            font-family: Baskerville;
+            src: url(assets/fonts/LibreBaskerville-Bold.ttf);
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Baskerville";
+        }
+
+        body {
+            min-height: 100vh;
+            min-width: 200px;
+            background-color: #3c55e4;
+        }
+
+        /*
+        GREETING
+        */
+
+        #greeting {
+            background-color: #8A2BE2;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #greeting .icon {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        #greeting .icon i:hover {
+            color: black;
+        }
+
+        #greeting .text {
+            padding-top: 40vh;
+        }
+
+        #greeting .text .name {
+            font-size: 40px;
+            font-weight: bold;
+            color: #242424;
+        }
+
+        #greeting .text .tag {
+            font-size: 20px;
+            color: #242424;
+        }
+
+        #greeting .media {
+            display: inline-block;
+            padding: 0 20px;
+            visibility: hidden;
+            color: #383838;
+        }
+
+        #greeting .media a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #greeting .media i:hover {
+            color: black;
+        }
+
+        #greeting .media a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*
+        INFO
+        */
+
+        #info {
+            background-color: #3c55e4;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #info .text {
+            padding-top: 40vh;
+        }
+
+        #info .text .name {
+            font-size: 40px;
+            font-weight: bold;
+            color: #242424;
+        }
+
+        #info .text .tag {
+            font-size: 20px;
+            color: #242424;
+        }
+
+        #info .icon {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            bottom: calc(-100vh);
+            width: 100%;
+        }
+
+        #info .icon a {
+            color: #f9f9f9 !important;
+        }
+
+        #info .icon i:hover {
+            color: black;
+        }
+
+        /*
+        NAVBAR
+        */
+
+        #nav {
+            float: left;
+            width: 100%;
+            height: 40px;
+            top: 0;
+        }
+
+        #nav .element {
+            float: left;
+            width: 33.33%;
+            text-align: center;
+            height: 40px;
+            font-size: 30px;
+            padding-top: 5px;
+            font-weight: bold;
+            color: #262626;
+        }
+
+        #arrow {
+            visibility: hidden;
+        }
+
+        #projects {
+            width: 100%;
+            background-color: #3c55e4;
+            margin: auto;
+        }
+
+        /*
+        Elements
+         */
+
+        .elements {
+            margin: 30px 10%;
+            background-color: #f8f8f8;
+        }
+
+        .elements .title {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #b1b1b1;
+        }
+
+        .elements .element {
+            margin: 10px auto;
+            min-width: 200px;
+            max-width: 500px;
+            display: block;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+
+        .elements .element a {
+            text-decoration: none;
+            color: #3c55e4;
+            padding-right: 10px;
+        }
+
+        .elements .element .name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .elements .element .description {
+            margin-top: 20px;
+        }
+
+        #experience {
+        }
+
+        #blogs {
+        }
+
+        @media only screen and (max-width: 600px) {
+            .elements {
+                padding: 0 0;
+                margin: 0;
+            }
+
+            #projects .elements .element {
+            }
+        }
+    </style>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+<div id="greeting">
+    <div class="text">
+        <div class="name" id="name"></div>
+        <div class="tag" id="tag"></div>
+        <br/>
 
-<br>
-<h1>Avery Durrant</h1>
-<h3>Full Stack Developer and Data Science Enthusiast</h3>
-<h3>Student at Make School</h3>
+        <div class="medias">
+            <div class="media" id="linkedin">
+                <a href="https://www.linkedin.com/in/avery-durrant/" target="_blank">
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                </a>
+            </div>
 
-<br>
+            <div class="media" id="github">
+                <a href="https://github.com/Avery246813579" target="_blank">
+                    <i class="fa fa-github fa-3x"></i>
+                </a>
+            </div>
 
-<div id="pad">
-    <h2 style="text-align: center">About Me</h2>
-
-    <br>
-
-    <ul>
-        <li>I have been programming for over 6 years of my life and know about 11 languages.</li>
-        <li>I love Java, Javascript, Python and C#.</li>
-        <li>I love playing with React, React-Native, Xamarin.</li>
-        <li>I love framing with Node.js, Flask, Rails</li>
-        <li>I love using Gitflow Workflow, Slack, and Trello.</li>
-        <li>I commit everyday and over communicate</li>
-        <li>I love learning new things and helping the community</li>
-        <li>I don't like styling projects</li>
-    </ul>
-
-    <br>
-
-    <h2 style="text-align: center">Work Experience</h2>
-
-    <br>
-
-    <h3>Eye Of Ender</h3>
-    <b>Software Developer : September. 2013 - August. 2014</b><br>
-    <ul style="padding-left: 20px">
-        <li>Worked to create Minecraft plugins in Java that interacted with a MySQL server.</li>
-        <li>Created Linux environments to host servers in and tied them together with packets.</li>
-    </ul>
-    <br>
-
-    <h3>Freelance</h3>
-    <b>Software Developer : September. 2014 - September. 2015</b><br>
-    <ul style="padding-left: 20px">
-        <li>Made websites, servers, and programs for numerous clients.</li>
-        <li>Worked with Java, Javascript, Python, Ruby, C#.</li>
-    </ul>
-    <br>
-
-    <h3>Frostbyte</h3>
-    <b>Founder/CEO : August. 2015 - CURRENT</b><br>
-    <ul style="padding-left: 20px">
-        <li>Developing multiple projects for Mobile and Web.</li>
-        <li>Helped make projects in Java, Javascript, Python, Node.js, Xamarin, React, React-Native.</li>
-        <li>Heavily involved in creating and maintaining a legal business.</li>
-    </ul>
-    <br>
-
-    <br>
-
-    <h2 style="text-align: center">Big Projects</h2>
-
-    <br>
-
-    <h3>Commservus (Open Source) (Node.js, React-Native, React)</h3>
-    <b>Project Lead and Backend Developer</b><br>
-    <p>A network where you can find, track, and host community service events. We have an ios app, android app, and
-        website!</p>
-    <br>
-
-    <h3>Mentor (Open Source) (Node.js, React-Native, React)</h3>
-    <b>Project Lead and Backend Developer</b><br>
-    <p>An app to connect mentors with mentees!</p>
-    <br>
-
-    <h3>Instact (Node.js, React-Native, React)</h3>
-    <b>Project Head & Mobile and Server Developer</b><br>
-    <p>The new age of contacts!</p>
-    <br>
-
-    <h2 style="text-align: center">Fun Projects</h2>
-
-    <br>
-
-    <a href="https://github.com/Avery246813579/Obama-Speech-Quote-Generator"><h3>Raindow Chain Markov Model</h3></a>
-    <b>Python (Flask React, React) : 2017</b><br>
-    <p>An Machine Learning api that uses a unique type of Markov Chain called Rainbow Chains. We have an example as an
-        Obama Speech Quote Generator.</p>
-    <br>
-
-    <a href="https://github.com/Avery246813579/Flappy-Evolutions"><h3>Flappy Evolution Learning</h3></a>
-    <b>Javascript : 2016</b><br>
-    <p>We use the evolution theory to make a perfect bird. They learn from their mistakes.</p>
-    <br>
-
-    <a href="https://github.com/Avery246813579/Github-Framework"><h3>Github Framework</h3></a>
-    <b>Javascript, Python : 2017</b><br>
-    <p>A Chrome Extension that shows what frameworks a Github Repository is using.</p>
-    <br>
-
-    <h3>SQL Series</h3>
-    <b>Javascript, PHP, Java, Sql : 2014 - PRESENT</b><br>
-    <ul style="padding-left: 20px">
-        <li>Series of APIs that make SQL easier in a specific language.</li>
-        <li>The series includes a <a href="https://github.com/Avery246813579/JSQL">Java</a>,
-            <a href="https://github.com/Avery246813579/PSQL">PHP</a>, and a
-            <a href="https://github.com/Avery246813579/JSSQL">Node library</a> with a Python library on the way
-        </li>
-    </ul>
-    <br>
-
-    <a href="https://github.com/Avery246813579/HotPotato"><h3>Hot Potato</h3></a>
-    <b>Java, Sql : 2013 - 2015</b><br>
-    <ul style="padding-left: 20px">
-        <li>A Minecraft plugin in which you could play a mini game called Hot Potato.</li>
-        <li>Over 33,000 downloads to date</li>
-    </ul>
-    <br>
-
-    <a href="https://github.com/Avery246813579/TheAveryBot"><h3>TheAveryBot</h3></a>
-    <b>Java, Sql, PHP, Javascript : 2014 - 1015</b><br>
-    <ul style="padding-left: 20px">
-        <li>A website and twitch chat bot that monitored chat and could play games</li>
-        <li>Worked with some of the biggest Twitch streamers at the time.</li>
-    </ul>
-    <br>
-
-    <h3>Java Game Engine</h3>
-    <b>Java : 2015</b><br>
-    <ul style="padding-left: 20px">
-        <li>I made a few games in Java using my own Engine</li>
-        <li>I made <a href="https://github.com/Avery246813579/Solenoid">one for a Ludum dare</a> and
-            <a href="">one on a twitch stream</a>.
-        </li>
-    </ul>
-    <br>
-
-    <h2 style="text-align: center">Blogs</h2>
-
-    <br>
-
-    <h3>The Rainbow Chain: Middle our Markov Chain</h3>
-    <b>TBD</b><br>
-    <p>A way to do a Markov Chain.</p>
-    <br>
+            <div class="media" id="email">
+                <a href="mailto:avery@frostbyte.co" target="_blank">
+                    <i class="fa fa-envelope fa-3x"></i>
+                </a>
+            </div>
+        </div>
 
 
-    <h3>Make School</h3>
-    <b>TBD</b><br>
-    <p>Talking about the greatest school in the world.</p>
-    <br>
-
-    <h3>The Future is Open Sourced</h3>
-    <b>TBD</b><br>
-    <p>How open sourcing is the future of software and hardware development.</p>
-    <br>
+        <div class="icon">
+            <a href="#info">
+                <i class="fa fa-angle-down fa-4x" id="arrow"></i>
+            </a>
+        </div>
+    </div>
 </div>
+
+<div id="info">
+    <div class="text">
+        <div class="name" id="info_name">
+            I've been coding for 6+ years
+        </div>
+        <div class="tag">I know <span id="info_tag"></span></div>
+        <br/>
+
+        <div class="icon">
+            <a href="#projects">
+                <i class="fa fa-angle-down fa-4x"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!--<div id="nav">-->
+<!--<a class="text" href="#projects">-->
+<!--<div class="element" style="background-color: #3c55e4">-->
+<!--Projects-->
+<!--</div>-->
+<!--</a>-->
+<!--<a class="text" href="#experience">-->
+<!--<div class="element" style="background-color: #b03da8">-->
+<!--Experience-->
+<!--</div>-->
+<!--</a>-->
+<!--<a class="text" href="#blogs">-->
+<!--<div class="element" style="background-color: #db3cb9">-->
+<!--Blogs-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+
+<div id="projects">
+    <div class="elements">
+        <div class="title">
+            My Projects
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning, Flask, Sql, React
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
+                    Source
+                </a>
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Flappy Machine Learning
+            </div>
+            <div class="languages">
+                Javascript, Machine Learning
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Flappy-Evolutions" target="_blank">
+                    Source
+                </a>
+                <a href="https://avery246813579.github.io/Flappy-Evolutions/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I created a machine learning game that had birds learning to solve an obstacle course.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Commservus
+            </div>
+            <div class="languages">
+                Javascript, C#, SQL, Node.js, Xamarin, Mocha, Chai
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Legacy-Commservus-Server" target="_blank">
+                    Server & Website Source
+                </a>
+            </div>
+            <div class="description">
+                I did stuff that was lit and it was really fun. I worked using these things doing that things
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                SQL Series
+            </div>
+            <div class="languages">
+                Javascript, Java, PHP, SQL
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/JSSQL" target="_blank">
+                    Javascript
+                </a>
+                <a href="https://github.com/Avery246813579/JSQL" target="_blank">
+                    Java
+                </a>
+                <a href="https://github.com/Avery246813579/PSQL" target="_blank">
+                    PHP
+                </a>
+
+            </div>
+            <div class="description">
+                I wrote a series of APIs that let you use SQL if you didn't know the language.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Hot Potato
+            </div>
+            <div class="languages">
+                Java
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/HotPotato" target="_blank">
+                    Source
+                </a>
+            </div>
+            <div class="description">
+                I developed a Minecraft Plugin that was downloaded over 33k times and used on tens of thousands of
+                Minecraft
+                servers.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="experience">
+    <div class="elements">
+        <div class="title">
+            Experience
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning, Flask, Sql, React
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
+                    Source
+                </a>
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Rainbow Chain
+            </div>
+            <div class="languages">
+                Python, Machine Learning, Flask, Sql, React
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
+                    Source
+                </a>
+                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
+                    Live Version
+                </a>
+            </div>
+            <div class="description">
+                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
+                wrote an example for it using React and Flask.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Hot Potato
+            </div>
+            <div class="languages">
+                Java
+            </div>
+            <div class="links">
+                <a href="https://github.com/Avery246813579/HotPotato" target="_blank">
+                    Source
+                </a>
+            </div>
+            <div class="description">
+                I developed a Minecraft Plugin that was downloaded over 33k times and used on tens of thousands of
+                Minecraft
+                servers.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="blogs">
+    <div class="elements">
+        <div class="title">
+            Blogs
+        </div>
+
+        <div class="element">
+            <div class="name">
+                My Experience with Google Foobar: Tips and Tricks for succeeding
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about my experience with the Google Foobar challenge and some tips and tricks
+                on what I think could help people in the future.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                The Rainbow Chain: Generate sentences around a topic (using Middle Out)
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I explain about how to create a Rainbow Chain and the underlying structures it's
+                built on.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                Make School: The New College Education
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about a two year college alternative called Make School and my experience
+                and journey to this school.
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="name">
+                The Power of Open Source
+            </div>
+            <div class="links">
+                <a href="#">
+                    Coming Soon
+                </a>
+            </div>
+            <div class="description">
+                I talk about how an open source technology and software market would greatly
+                improve the market.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let doFunctions = [];
+
+    function doStuff() {
+        for (let i = 0; i < doFunctions.length; i++) {
+            doFunctions[i]();
+        }
+    }
+
+    let TimeText = function (id, text, time, callback) {
+        let ID = document.getElementById(id);
+        let index = 0, last_time = new Date().getTime();
+
+        let addLetter = function () {
+            if (new Date().getTime() - last_time < time) {
+                requestAnimationFrame(addLetter);
+                return;
+            }
+
+            if (index + 1 > text.length) {
+                if (typeof callback !== "undefined") {
+                    callback();
+                }
+
+                return;
+            }
+
+            if (ID.innerHTML === '<br>') {
+                ID.innerHTML = '';
+            } else {
+                console.log(ID.innerHTML)
+            }
+
+            ID.innerHTML += text[index];
+            index += 1;
+
+            last_time = new Date().getTime();
+            requestAnimationFrame(addLetter)
+        };
+
+        requestAnimationFrame(addLetter);
+    };
+
+    let TimeReduce = function (id, time, callback) {
+        let ID = document.getElementById(id);
+        let last_time = new Date().getTime();
+
+        let addLetter = function () {
+            if (new Date().getTime() - last_time < time) {
+                requestAnimationFrame(addLetter);
+                return;
+            }
+
+            if (ID.innerHTML.length < 2) {
+                ID.innerHTML = '<br />';
+                if (typeof callback !== "undefined") {
+                    callback();
+                }
+
+                return;
+            }
+
+            ID.innerHTML = ID.innerHTML.substr(0, ID.innerHTML.length - 1);
+
+            last_time = new Date().getTime();
+            requestAnimationFrame(addLetter)
+        };
+
+        requestAnimationFrame(addLetter);
+    };
+
+
+    LIKES = ['I love teaching others', 'I like to dance'];
+    let generate_like = function (stop) {
+        new TimeReduce('tag', 50, function () {
+            setTimeout(function () {
+                new TimeText('tag', LIKES[Math.floor(Math.random() * LIKES.length)], 50, function () {
+                    if (typeof stop !== "undefined") {
+                        stop();
+                        return;
+                    }
+
+                    setTimeout(function () {
+                        generate_like();
+                    }, 2500)
+                })
+            }, 250)
+        });
+    };
+
+    new TimeText('name', 'Hi, my name is Avery', 50, function () {
+        setTimeout(function () {
+            new TimeText('tag', 'I have been programming for over 6 years', 50, function () {
+                setTimeout(function () {
+                    generate_like(function () {
+                        setTimeout(function () {
+                            generate_like(function () {
+                                setTimeout(function () {
+
+                                    document.getElementById('linkedin').style.visibility = "visible";
+                                    setTimeout(function () {
+                                        document.getElementById('github').style.visibility = "visible";
+
+                                        setTimeout(function () {
+                                            document.getElementById('email').style.visibility = "visible";
+
+                                            setTimeout(function () {
+                                                document.getElementById('arrow').style.visibility = "visible";
+
+                                                setTimeout(function () {
+                                                    generate_like();
+                                                }, 500)
+                                            }, 500);
+                                        }, 500)
+                                    }, 500)
+                                }, 500);
+                            });
+                        }, 500);
+                    })
+                }, 500)
+            })
+        }, 200);
+    });
+
+    let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
+    let generate_know = function (stop) {
+        new TimeReduce('info_tag', 50, function () {
+            setTimeout(function () {
+                new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
+                    if (typeof stop !== "undefined") {
+                        stop();
+                        return;
+                    }
+
+                    setTimeout(function () {
+                        generate_like();
+                    }, 2500)
+                })
+            }, 250)
+        });
+    };
+
+    generate_know();
+
+    window.onscroll = function () {
+        if (window.scrollY > document.getElementById('greeting').clientHeight) {
+            document.getElementById('nav').style.position = 'fixed';
+        } else {
+            document.getElementById('nav').style.position = 'static';
+        }
+    }
+</script>
+>>>>>>> v2
 </body>
 </html>
