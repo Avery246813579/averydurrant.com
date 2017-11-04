@@ -597,26 +597,29 @@
     };
 
 
-    const LIKES = ['I know Java', 'I know HTML, CSS, and JS', 'I know PHP and SQL', 'I know Python and Flask', 'I know Javascript and Node.js'];
+    const LIKES = ['I know Python and Flask', 'I know Javascript and Node.js', 'I know HTML, CSS, and JS',
+        'I know Java, PHP and SQL', 'I know React and React Native', 'I know C# and Xamarin',
+        'I know Git and Gitflow Workflow', 'I know C++ and C'];
+
     let NEXT_TAG = 0;
     let generate_like = function (stop) {
         new TimeReduce('tag', 50, function () {
             setTimeout(function () {
                 new TimeText('tag', LIKES[NEXT_TAG], 50, function () {
+                    NEXT_TAG++;
+
                     if (typeof stop !== "undefined") {
                         stop();
                         return;
                     }
 
                     setTimeout(function () {
-                        NEXT_TAG++;
-
                         if (NEXT_TAG >= LIKES.length){
                             NEXT_TAG = 0;
                         }
 
                         generate_like();
-                    }, 2500)
+                    }, 2000)
                 })
             }, 250)
         });
@@ -624,7 +627,7 @@
 
     new TimeText('name', 'Hi, my name is Avery', 50, function () {
         setTimeout(function () {
-            new TimeText('tag', 'I have been programming for over 6 years', 50, function () {
+            new TimeText('tag', 'I\'ve been programming for over 6 years', 50, function () {
                 setTimeout(function () {
                     generate_like(function () {
                         setTimeout(function () {
@@ -655,26 +658,6 @@
             })
         }, 200);
     });
-
-//    let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
-//    let generate_know = function (stop) {
-//        new TimeReduce('info_tag', 50, function () {
-//            setTimeout(function () {
-//                new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
-//                    if (typeof stop !== "undefined") {
-//                        stop();
-//                        return;
-//                    }
-//
-//                    setTimeout(function () {
-//                        generate_like();
-//                    }, 2500)
-//                })
-//            }, 250)
-//        });
-//    };
-
-    generate_know();
 
     window.onscroll = function () {
         if (window.scrollY > document.getElementById('greeting').clientHeight) {
