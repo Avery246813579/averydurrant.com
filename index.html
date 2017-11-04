@@ -36,7 +36,7 @@
         */
 
         #greeting {
-            background-color: #8A2BE2;
+            background-color: #3c55e4;
             text-align: center;
             height: 100vh;
         }
@@ -47,6 +47,7 @@
             margin: auto;
             bottom: 10px;
             width: 100%;
+            color: #242424;
         }
 
         #greeting .icon i:hover {
@@ -72,12 +73,12 @@
             display: inline-block;
             padding: 0 20px;
             visibility: hidden;
-            color: #383838;
+            color: #242424;
         }
 
         #greeting .media a {
             text-decoration: none;
-            color: black;
+            color: #242424;
         }
 
         #greeting .media i:hover {
@@ -86,7 +87,7 @@
 
         #greeting .media a:visited {
             text-decoration: none;
-            color: black;
+            color: #242424;
         }
 
         /*
@@ -153,7 +154,12 @@
         }
 
         #arrow {
+            color: #242424;
             visibility: hidden;
+        }
+
+        #arrow:hover{
+            color: black;
         }
 
         #projects {
@@ -253,28 +259,28 @@
 
 
         <div class="icon">
-            <a href="#info">
+            <a href="#projects">
                 <i class="fa fa-angle-down fa-4x" id="arrow"></i>
             </a>
         </div>
     </div>
 </div>
 
-<div id="info">
-    <div class="text">
-        <div class="name" id="info_name">
-            I've been coding for 6+ years
-        </div>
-        <div class="tag">I know <span id="info_tag"></span></div>
-        <br/>
+<!--<div id="info">-->
+    <!--<div class="text">-->
+        <!--<div class="name" id="info_name">-->
+            <!--I've been coding for 6+ years-->
+        <!--</div>-->
+        <!--<div class="tag">I know <span id="info_tag"></span></div>-->
+        <!--<br/>-->
 
-        <div class="icon">
-            <a href="#projects">
-                <i class="fa fa-angle-down fa-4x"></i>
-            </a>
-        </div>
-    </div>
-</div>
+        <!--<div class="icon">-->
+            <!--<a href="#projects">-->
+                <!--<i class="fa fa-angle-down fa-4x"></i>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 
 <!--<div id="nav">-->
@@ -355,7 +361,7 @@
                 </a>
             </div>
             <div class="description">
-                I did stuff that was lit and it was really fun. I worked using these things doing that things
+                A website and app that hosts and tracks community service events for schools then tracks the hours.
             </div>
         </div>
 
@@ -412,62 +418,40 @@
 
         <div class="element">
             <div class="name">
-                Rainbow Chain
+                Eye Of Ender
             </div>
             <div class="languages">
-                Python, Machine Learning, Flask, Sql, React
-            </div>
-            <div class="links">
-                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
-                    Source
-                </a>
-                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
-                    Live Version
-                </a>
+                Software Engineer
             </div>
             <div class="description">
-                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
-                wrote an example for it using React and Flask.
+                Made Mini-Games, and Maintained Data Management for a Minecraft Network using Java and MySQL. My
+                products averaged 200 concurrent users
             </div>
         </div>
 
         <div class="element">
             <div class="name">
-                Rainbow Chain
+                 Freelance
             </div>
             <div class="languages">
-                Python, Machine Learning, Flask, Sql, React
-            </div>
-            <div class="links">
-                <a href="https://github.com/Avery246813579/Python-Rainbow-Chain" target="_blank">
-                    Source
-                </a>
-                <a href="https://obama-quote-generator.herokuapp.com/" target="_blank">
-                    Live Version
-                </a>
+                Software Engineer
             </div>
             <div class="description">
-                I developed a PyPI project that made a Markov Chain that could create a sentence around a seed. I then
-                wrote an example for it using React and Flask.
+                Made half a dozen websites, servers, and programs for numerous clients. Worked with Java, Javascript,
+                Python, Ruby, C.
             </div>
         </div>
 
         <div class="element">
             <div class="name">
-                Hot Potato
+                Make School
             </div>
             <div class="languages">
-                Java
-            </div>
-            <div class="links">
-                <a href="https://github.com/Avery246813579/HotPotato" target="_blank">
-                    Source
-                </a>
+                Computer Science Teacher Assistant
             </div>
             <div class="description">
-                I developed a Minecraft Plugin that was downloaded over 33k times and used on tens of thousands of
-                Minecraft
-                servers.
+                Helped Students with machine learning and making things like Markov Models, Linked Lists, and Hash
+                Tables.
             </div>
         </div>
     </div>
@@ -613,17 +597,24 @@
     };
 
 
-    LIKES = ['I love teaching others', 'I like to dance'];
+    const LIKES = ['I know Java', 'I know HTML, CSS, and JS', 'I know PHP and SQL', 'I know Python and Flask', 'I know Javascript and Node.js'];
+    let NEXT_TAG = 0;
     let generate_like = function (stop) {
         new TimeReduce('tag', 50, function () {
             setTimeout(function () {
-                new TimeText('tag', LIKES[Math.floor(Math.random() * LIKES.length)], 50, function () {
+                new TimeText('tag', LIKES[NEXT_TAG], 50, function () {
                     if (typeof stop !== "undefined") {
                         stop();
                         return;
                     }
 
                     setTimeout(function () {
+                        NEXT_TAG++;
+
+                        if (NEXT_TAG >= LIKES.length){
+                            NEXT_TAG = 0;
+                        }
+
                         generate_like();
                     }, 2500)
                 })
@@ -665,23 +656,23 @@
         }, 200);
     });
 
-    let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
-    let generate_know = function (stop) {
-        new TimeReduce('info_tag', 50, function () {
-            setTimeout(function () {
-                new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
-                    if (typeof stop !== "undefined") {
-                        stop();
-                        return;
-                    }
-
-                    setTimeout(function () {
-                        generate_like();
-                    }, 2500)
-                })
-            }, 250)
-        });
-    };
+//    let INFO = ['SQL', 'Java', 'Html', 'Css', 'Javascript', 'C#', 'React', 'Node.js', 'Flask'];
+//    let generate_know = function (stop) {
+//        new TimeReduce('info_tag', 50, function () {
+//            setTimeout(function () {
+//                new TimeText('info_tag', INFO[Math.floor(Math.random() * INFO.length)], 50, function () {
+//                    if (typeof stop !== "undefined") {
+//                        stop();
+//                        return;
+//                    }
+//
+//                    setTimeout(function () {
+//                        generate_like();
+//                    }, 2500)
+//                })
+//            }, 250)
+//        });
+//    };
 
     generate_know();
 
