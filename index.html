@@ -554,8 +554,6 @@
 
             if (ID.innerHTML === '<br>') {
                 ID.innerHTML = '';
-            } else {
-                console.log(ID.innerHTML)
             }
 
             ID.innerHTML += text[index];
@@ -659,13 +657,13 @@
         }, 200);
     });
 
-    window.onscroll = function () {
-        if (window.scrollY > document.getElementById('greeting').clientHeight) {
-            document.getElementById('nav').style.position = 'fixed';
-        } else {
-            document.getElementById('nav').style.position = 'static';
-        }
-    }
+//    window.onscroll = function () {
+//        if (window.scrollY > document.getElementById('greeting').clientHeight) {
+//            document.getElementById('nav').style.position = 'fixed';
+//        } else {
+//            document.getElementById('nav').style.position = 'static';
+//        }
+//    }
 </script>
 </body>
 </html>
