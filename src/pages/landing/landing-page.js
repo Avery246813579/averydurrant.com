@@ -1,11 +1,15 @@
 import React, {Component} from "react"
 import Block from "../../components/block/block";
+import Section from "../../components/section/section";
+import Projects from "../../features/projects/projects";
 
 class LandingPage extends Component {
     render() {
         return (
             <div>
                 Hey, I'm Avery. I like to build things.
+
+                <Projects />
 
                 <h1>
                     Projects
@@ -138,8 +142,6 @@ class LandingPage extends Component {
                 <div>
                     My friend <a href="https://www.linkedin.com/in/steven-wood/">Steven Wood</a>
                 </div>
-
-                <Block/>
             </div>
         )
     }

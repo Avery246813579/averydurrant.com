@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const BlockWrapper = styled.div`
-  background-color: red;
-  
-  flex: 1;
-  max-width: 900px;
+  max-width: 500px;
+  min-width: 320px;
+  flex-shrink: 1;
+  background-color: rebeccapurple;
 `

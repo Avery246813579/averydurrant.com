@@ -1,17 +1,20 @@
 import {applyMiddleware, bindActionCreators, combineReducers, createStore} from "redux";
 import {connect} from "react-redux";
 import thunk from "redux-thunk";
+import {compose} from "redux";
 
 import {testReducer} from "./test";
+import {hardwareReducer} from "./hardware";
 
 import * as TestActions from "./test";
+import * as HardwareActions from "./hardware";
 
 let store = null;
 
 export function setupStore() {
     store = createStore(combineReducers({
-        test: testReducer
-    }), applyMiddleware(thunk));
+        test: testReducer, hardware: hardwareReducer
+    }), compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f));
 
     return store;
 }
@@ -21,7 +24,7 @@ export function getStore() {
 }
 
 export function getActions() {
-    return {...TestActions};
+    return {...TestActions, ...HardwareActions};
 }
 
 export function setupReduxConnection(getProps) {
