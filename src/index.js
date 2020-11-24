@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import AppLayout from "./layouts/app-layout";
+import {Provider} from "react-redux";
+import {setupStore} from "./redux";
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppLayout>
+        <Provider store={setupStore()}>
+            <AppLayout>
 
-        </AppLayout>
+            </AppLayout>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

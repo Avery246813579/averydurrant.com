@@ -100,6 +100,30 @@ class AppLayout extends Component {
                     </div>
                 </div>
 
+                <h1>
+                    About Me
+                </h1>
+
+                <div>
+                    I like to rock climb
+                </div>
+
+                <div>
+                    I like to make music
+                </div>
+
+                <div>
+                    I love the bruins
+                </div>
+
+                <h1>
+                    Coding Life
+                </h1>
+
+                <div>
+                    I like to use Webstorm
+                </div>
+
                 <Block/>
             </AppWrapper>
         );
