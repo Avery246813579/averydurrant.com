@@ -1,130 +1,15 @@
 import React, {Component} from "react";
 import Block from "../components/block/block";
 import {AppWrapper} from "./app-layout.style";
+import {GlobalStyle} from "../assets/styles/global.style";
 
 class AppLayout extends Component {
     render() {
         return (
             <AppWrapper>
-                Hey, I'm Avery. I like to build things.
+                <GlobalStyle />
 
-                <h1>
-                    Projects
-                </h1>
-
-                <div>
-                    Drip
-                </div>
-
-                <div>
-                    Drip Drinks
-                </div>
-
-                <div>
-                    Cork Drinks
-                </div>
-
-                <div>
-                    Instact
-                </div>
-
-                <div>
-                    Commservus
-                </div>
-
-                <div>
-                    Rainbow Chains
-
-                    <div>
-                        Open Source
-                    </div>
-                </div>
-
-                <div>
-                    Stripe Terminal
-
-                    <div>
-                        Open Source
-                    </div>
-                </div>
-
-                <div>
-                    Hey Deltek
-                </div>
-
-                <div>
-                    VantagePoint
-                </div>
-
-                <h1>
-                    Jobs
-                </h1>
-
-                <div>
-                    PaySplit
-
-                    <div>
-                        Advisor
-                    </div>
-                </div>
-
-                <div>
-                    Frostbyte Technologies Inc
-
-                    <div>
-                        Co-founder
-                    </div>
-                </div>
-
-                <div>
-                    Deltek Inc
-
-                    <div>
-                        Contract Software Engineer
-                    </div>
-                </div>
-
-                <div>
-                    Frostbyte LLC
-
-                    <div>
-                        Founder
-                    </div>
-                </div>
-
-                <div>
-                    Eye of Ender
-
-                    <div>
-                        Software Engineer
-                    </div>
-                </div>
-
-                <h1>
-                    About Me
-                </h1>
-
-                <div>
-                    I like to rock climb
-                </div>
-
-                <div>
-                    I like to make music
-                </div>
-
-                <div>
-                    I love the bruins
-                </div>
-
-                <h1>
-                    Coding Life
-                </h1>
-
-                <div>
-                    I like to use Webstorm
-                </div>
-
-                <Block/>
+                {this.props.children}
             </AppWrapper>
         );
     }
