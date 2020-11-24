@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const SectionWrapper = styled.div`
-  background-color: ${({dark}) => dark ? "black" : "white"};
   color: ${({dark}) => dark ? "white" : "black"};
   
   flex: 1;

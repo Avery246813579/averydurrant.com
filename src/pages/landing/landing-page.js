@@ -1,6 +1,4 @@
 import React, {Component} from "react"
-import Block from "../../components/block/block";
-import Section from "../../components/section/section";
 import Projects from "../../features/projects/projects";
 
 class LandingPage extends Component {

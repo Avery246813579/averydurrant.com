@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {AppWrapper} from "./app-layout.style";
-import {GlobalStyle} from "../assets/styles/global.style";
 import {getStore} from "../redux";
 import {updateTheme} from "../redux/hardware";
+import GlobalStyle from "./styles/global";
 
 class AppLayout extends Component {
     componentDidMount() {
